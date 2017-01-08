@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html th:fragment="layout (template, menu)" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/resources/images/favicon.png}">
+
+
+
+    <title>Content Management System</title>
+
+    <!-- CSS  -->
+    <!-- Styles -->
+    <link rel="stylesheet" th:href="@{/resources/css/app.css}"/>
+    <!--<link rel="stylesheet" th:href="@{/resources/css/main.css}"/>-->
+    <!-- Styles * End -->
+</head>
+<body>
+<div class="navbar-fixed noPrint">
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <!--<a id="logo-container" class="brand-logo center crm-logo"-->
+               <!--style="background-image: url('http://crm.w3bd.com/imgs/logo.png');">-->
+            <!--</a>-->
+
+
+            <ul class="left hide-on-med-and-down">
+                <li><a href="#!" class="dropdown-button lft" data-activates="clients-dropdown"
+                       data-beloworigin="true"><i class="fa fa-users"></i> Tasks</a>
+                </li>
+                <li><a href="#!" class="dropdown-button lft" data-activates="orders-dropdown" data-beloworigin="true"><i
+                        class="fa fa-first-order" aria-hidden="true"></i> Articles</a>
+                </li>
+                <li><a href="#!" class="dropdown-button lft" data-activates="support-dropdown"
+                       data-beloworigin="true"><i class="fa fa-life-ring" aria-hidden="true"></i> Article Categories</a>
+                </li>
+            </ul>
+
+            <!-- Sub Menues -->
+            <ul id="clients-dropdown" class="dropdown-content">
+                <li><a href="http://crm.w3bd.com/clients">All Tasks</a></li>
+                <li><a href="http://crm.w3bd.com/clients/add">Add new Task</a></li>
+                <li><a href="http://crm.w3bd.com/clients/groups">Active Tasks</a></li>
+                <li><a href="http://crm.w3bd.com/clients/bulk-email">Completed Task</a></li>
+            </ul>
+
+            <ul id="orders-dropdown" class="dropdown-content">
+                <li><a href="http://crm.w3bd.com/order">All orders</a></li>
+                <li><a href="http://crm.w3bd.com/order/add">Add new order</a></li>
+                <li><a href="http://crm.w3bd.com/order/pending">Pending order</a></li>
+                <li><a href="http://crm.w3bd.com/order/active">Active order</a></li>
+                <li><a href="http://crm.w3bd.com/order/fraud">Fraud order</a></li>
+                <li><a href="http://crm.w3bd.com/order/cancel">Cancelled order</a></li>
+            </ul>
+
+            <ul id="support-dropdown" class="dropdown-content">
+                <li><a href="http://crm.w3bd.com/faq">FAQs</a></li>
+                <li><a href="http://crm.w3bd.com/article">Kb Articles</a></li>
+                <li><a href="http://crm.w3bd.com/article/categories">Kb Categories</a></li>
+                <li><a href="http://crm.w3bd.com/ticket/active">All active tickets</a></li>
+                <li><a href="http://crm.w3bd.com/ticket/customer/replied">Customer replied tickets</a></li>
+                <li><a href="http://crm.w3bd.com/ticket/answered">Answer ticket</a></li>
+                <li><a href="http://crm.w3bd.com/ticket/close">Closed ticket</a></li>
+                <li><a href="http://crm.w3bd.com/ticket/add">Create a new ticket1111</a></li>
+            </ul>
+
+            <!-- Sub Menues ** END -->
+
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#!" class="dropdown-button rht" data-activates="applications-dropdown"
+                       data-beloworigin="true"><i class="fa fa-archive" aria-hidden="true"></i> Todos</a></li>
+                <li><a href="#!" class="dropdown-button rht" data-activates="finance-dropdown"
+                       data-beloworigin="true"><i class="fa fa-money" aria-hidden="true"></i> Notice Board</a>
+                </li>
+                <li><a href="#!" class="dropdown-button rht" data-activates="setup-dropdown" data-beloworigin="true"><i
+                        class="fa fa-wrench" aria-hidden="true"></i> Setting</a>
+                </li>
+                <!--<li><a href="#!" class="dropdown-button rht" data-activates="tools-dropdown" data-beloworigin="true">Tools</a>-->
+                <!--</li>-->
+
+            </ul>
+
+            <!-- Sub Menues -->
+            <ul id="applications-dropdown" class="dropdown-content">
+                <li><a href="http://crm.w3bd.com/apps/todo">All Todo List</a></li>
+                <li><a href="http://crm.w3bd.com/apps/noticeboard">Add new</a></li>
+
+            </ul>
+
+            <ul id="finance-dropdown" class="dropdown-content">
+                <li><a href="http://crm.w3bd.com/accounts">All Notice</a></li>
+                <li><a href="http://crm.w3bd.com/accounts">Add New</a></li>
+            </ul>
+
+            <ul id="setup-dropdown" class="dropdown-content">
+                <li><a href="http://crm.w3bd.com/products">Setup CMS</a></li>
+            </ul>
+
+            <ul id="tools-dropdown" class="dropdown-content">
+                <li><a href="#!">System logs</a></li>
+                <li><a href="#!">Send email logs</a></li>
+                <li><a href="#!">System status</a></li>
+                <li><a href="#!">Database cleanup</a></li>
+                <li><a href="#!">Developer tools</a></li>
+            </ul>
+            <ul id="account-dropdown" class="dropdown-content">
+                <!--<small>Acount Name</small>-->
+                <li><a href="http://crm.w3bd.com/administrator/edit/2">Profile</a></li>
+                <li><a href="http://crm.w3bd.com/logout"
+                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a></li>
+                <form id="logout-form" action="http://crm.w3bd.com/logout" method="POST"  autocomplete="off" style="display: none;">
+                    <input type="hidden" name="_token" value="IEhJvGYgZpvmzVYM0snAkbYkifAiKEcRSk9DzenS">
+                </form>
+            </ul>
+            <!-- Sub Menues ** END -->
+
+
+            <ul class="side-nav" id="mobile-menu">
+                <li><a href="#!" class="dropdown-button lft"><i class="fa fa-users"></i> Clients</a>
+                    <ul id="clients-dropdown">
+                        <li><a href="http://crm.w3bd.com/clients">Manage Clients</a></li>
+                        <li><a href="http://crm.w3bd.com/clients/add">Add new clients</a></li>
+                        <li><a href="http://crm.w3bd.com/clients/groups">Client groups</a></li>
+                        <li><a href="http://crm.w3bd.com/clients/bulk-email">Send bulk email</a></li>
+                    </ul>
+                </li>
+                <li><a href="#!" class="dropdown-button lft"><i class="fa fa-first-order"></i> Orders</a>
+                    <ul id="orders-dropdown">
+                        <li><a href="http://crm.w3bd.com/order">All orders</a></li>
+                        <li><a href="http://crm.w3bd.com/order/add">Add new order</a></li>
+                        <li><a href="http://crm.w3bd.com/order/pending">Pending order</a></li>
+                        <li><a href="http://crm.w3bd.com/order/active">Active order</a></li>
+                        <li><a href="http://crm.w3bd.com/order/fraud">Fraud order</a></li>
+                        <li><a href="http://crm.w3bd.com/order/cancel">Cancelled order</a></li>
+                    </ul>
+                </li>
+                <li><a href="#!" class="dropdown-button lft"><i class="fa fa-life-ring"></i> Support</a>
+                    <ul id="support-dropdown">
+                        <li><a href="http://crm.w3bd.com/faq">FAQs</a></li>
+                        <li><a href="http://crm.w3bd.com/article">Kb Articles</a></li>
+                        <li><a href="http://crm.w3bd.com/article/categories">Kb Categories</a></li>
+                        <li><a href="http://crm.w3bd.com/ticket/active">All active tickets</a></li>
+
+
+                        <li><a href="http://crm.w3bd.com/ticket/close">Closed ticket</a></li>
+                        <li><a href="http://crm.w3bd.com/ticket/add">Create New ticket</a></li>
+                    </ul>
+                </li>
+                <li><a href="#!" class="dropdown-button lft"><i class="fa fa-credit-card"></i> Payments</a>
+                    <ul id="payments-dropdown">
+                        <li><a href="http://crm.w3bd.com/transactions">Transitions</a></li>
+                        <li><a href="http://crm.w3bd.com/invoices">Invoices</a></li>
+                        <li><a href="http://crm.w3bd.com/invoices/add">Create invoice</a></li>
+                        <li><a href="http://crm.w3bd.com/recurring">Recurring invoice</a></li>
+                    </ul>
+                </li>
+                <li><a href="#!" class="dropdown-button"><i class="fa fa-archive" aria-hidden="true"></i> Apps</a>
+                    <ul id="applications-dropdown">
+                        <li><a href="http://crm.w3bd.com/apps/todo">To Do</a></li>
+                        <li><a href="http://crm.w3bd.com/apps/noticeboard">Notice Board</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#!" class="dropdown-button"><i class="fa fa-money" aria-hidden="true"></i> Finance</a>
+                    <ul id="finance-dropdown">
+                        <li><a href="http://crm.w3bd.com/accounts">All accounts</a></li>
+                        <li><a href="http://crm.w3bd.com/transaction/income">Income entry</a></li>
+                        <li><a href="http://crm.w3bd.com/revenue">Revenue graph</a></li>
+                        <li><a href="http://crm.w3bd.com/transaction/expense">Express entry</a></li>
+                        <li><a href="http://crm.w3bd.com/transaction/transfer">Transfers</a></li>
+                        <li><a href="http://crm.w3bd.com/transactions">Transactions</a></li>
+                        <li><a href="http://crm.w3bd.com/balance-sheet">Balance sheet</a></li>
+                    </ul>
+                </li>
+                <li><a href="#!" class="dropdown-button"><i class="fa fa-wrench" aria-hidden="true"></i> Setup</a>
+                    <ul id="setup-dropdown">
+                        <li><a href="http://crm.w3bd.com/products">Products and services</a></li>
+                        <li><a href="http://crm.w3bd.com/administrator">Administrators</a></li>
+                        <li><a href="http://crm.w3bd.com/administrator/roles">Administrators role</a></li>
+                        <li><a href="http://crm.w3bd.com/payments">Payments gatways</a></li>
+                        <li><a href="http://crm.w3bd.com/email-templates">Email templates</a></li>
+                        <li><a href="http://crm.w3bd.com/support">Support departments</a></li>
+                        <li><a href="http://crm.w3bd.com/settings">System settings</a></li>
+                        <li><a href="http://crm-doc.w3bd.com">Documentation</a></li>
+                    </ul>
+                </li>
+                <li class="account avatar">
+                    <a href="http://crm.w3bd.com/administrator/edit/2">
+                        <div class="account-image"><img class="circle" width="38px" src="https://randomuser.me/api/portraits/thumb/women/19.jpg" alt="">
+                        </div>
+                    </a>
+                    <ul id="account-dropdown">
+                        <li><a href="#!">Logout</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+
+
+            <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+
+        </div>
+    </nav>
+</div>
+
+
+<div class="container">
+
+
+    <div th:replace="${template}"/>
+
+
+</div>
+
+
+
+<footer class="page-footer orange">
+
+    <div class="footer-copyright">
+        <div class="container">
+            Made by <a class="orange-text text-lighten-3" href="http://w3bd.com">W3BD</a>
+        </div>
+    </div>
+</footer>
+
+
+<!--  Scripts-->
+
+<!--  Scripts-- * End JS -->
+<script th:src="@{/resources/js/script.js}"></script>
+
+</body>
+</html>

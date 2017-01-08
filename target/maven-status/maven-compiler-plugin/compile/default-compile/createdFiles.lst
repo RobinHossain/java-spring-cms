@@ -1,0 +1,14 @@
+cms\article\ArticleController.class
+cms\task\Task.class
+cms\model\NamedEntity.class
+cms\article\ArticleRepository.class
+cms\CmsApplication.class
+cms\task\TaskController.class
+cms\article\Article.class
+cms\system\CrashController.class
+cms\model\BaseEntity.class
+cms\home\HomeController.class
+cms\task\TaskRepository.class
+cms\model\Person.class
+cms\system\CacheConfig.class
+cms\system\WelcomeController.class

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'tasks')}">
+
+<body>
+
+<div class="row">
+    <div class="col s12">
+        <h5 class="card-title center-align">Manage Clients</h5>
+    </div>
+</div>
+<hr class="top_title">
+
+<div class="row">
+
+<table id="vets" class="table table-striped">
+    <thead>
+    <tr>
+        <th style="width: 150px;">Name</th>
+        <th style="width: 200px;">Address</th>
+        <th>City</th>
+        <th style="width: 120px">Telephone</th>
+        <th>Pets</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="task : ${tasks}">
+        <td>
+            <a th:href="@{tasks/__${task.id}__}" th:text="${task.name }"/></a>
+        </td>
+        <td th:text="${task.details}"/>
+    </tr>
+    </tbody>
+</table>
+
+</div>
+
+</body>
+</html>
