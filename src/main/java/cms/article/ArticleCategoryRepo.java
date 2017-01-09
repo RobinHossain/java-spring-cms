@@ -7,16 +7,12 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
-import java.util.List;
 
-public interface ArticleRepository extends Repository<Article, Integer> {
+public interface ArticleCategoryRepo extends Repository<ArticleCategory, Integer> {
 
-    @Query("SELECT DISTINCT article FROM Article article WHERE article.title LIKE :title%")
+    @Query("SELECT DISTINCT acategory FROM ArticleCategory acategory WHERE acategory.name LIKE :name%")
     @Transactional(readOnly = true)
-    Collection<Article> findByTitle(@Param("title") String title);
+    Collection<ArticleCategory> findArticleCategories(@Param("name") String name);
 
-
-
-    void save(Article article);
+    void save(ArticleCategory acategory);
 }
-

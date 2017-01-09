@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'articleCategories')}">
+
+<body>
+
+<div class="row">
+    <div class="col s12">
+        <h5 class="card-title center-align">Manage Article Category</h5>
+    </div>
+</div>
+<hr class="top_title">
+
+<div class="row">
+
+    <table id="article-category" class="responsive-table bordered highlight">
+        <thead>
+        <tr>
+            <th style="width: 30%;">Name</th>
+            <th style="width: 30%;">Status</th>
+            <th style="width: 30%;">Details</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="category : ${articleCategories}">
+            <td th:text="${category.name}"/>
+            <td th:text="${category.status}"/>
+            <td th:text="${category.details}"/>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

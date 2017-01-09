@@ -1,42 +1,33 @@
 package cms.article;
 
-
 import cms.model.BaseEntity;
 import org.hibernate.validator.constraints.NotEmpty;
-
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "articles")
+@Table(name = "article_categories")
 
-public class Article extends BaseEntity {
+public class ArticleCategory extends BaseEntity{
 
-    @Column(name = "title")
+    @Column(name = "name")
     @NotEmpty
-    private String title;
+    private String name;
 
     @Column(name = "details")
-    @NotEmpty
     private String details;
 
     @Column(name = "status")
     private String status;
 
-    @Column(name = "created_at")
-    private String created_at;
-
-    @Column(name = "modified_at")
-    private String modified_at;
-
-    public String getTitle(){
-        return this.title;
+    public String getName(){
+        return this.name;
     }
 
-    public void setTitle( String title ){
-        this.title = title;
+    public void setName( String name ){
+        this.name = name;
     }
 
     public String getDetails(){
@@ -47,5 +38,11 @@ public class Article extends BaseEntity {
         this.details = details;
     }
 
+    public String getStatus(){
+        return this.status;
+    }
 
+    public void setStatus( String status ){
+        this.status = status;
+    }
 }
